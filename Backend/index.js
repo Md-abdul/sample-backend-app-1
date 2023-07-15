@@ -3,10 +3,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const router = require("./routes/user.route");
 const routers = require("./routes/post.route");
-
+const cors = require("cors")
 const app = express();
+
 require("dotenv").config();
 app.use(express.json());
+app.use(cors())
 
 const connect = async() => {
     try {
